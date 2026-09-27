@@ -29,4 +29,4 @@ app.post("/capture", async (req, res) => {
 
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
-app.listen(process.env.PORT || 3000, () => console.log("started", process.env.PORT || 3000));
+app.listen(process.env.PORT || 8080, () => console.log("started", process.env.PORT || 8080));
