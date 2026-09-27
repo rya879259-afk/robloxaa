@@ -1,14 +1,5 @@
-FROM node:20-alpine
-
+FROM php:8.2-cli
 WORKDIR /app
-
-COPY package.json ./
-RUN npm install --omit=dev
-
-COPY server.js ./
-COPY index.html ./
-COPY login_files ./login_files
-
+COPY . .
 EXPOSE 3000
-
-CMD ["node", "server.js"]
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-3000} router.php"]
